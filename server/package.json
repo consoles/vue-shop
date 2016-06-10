@@ -18,10 +18,13 @@
   "dependencies": {
     "bcrypt": "^0.8.6",
     "body-parser": "^1.15.0",
+    "compression": "^1.6.2",
     "connect-redis": "^3.0.2",
     "cookie-parser": "^1.4.0",
+    "cors": "^2.7.1",
     "express": "^4.13.4",
     "express-session": "^1.12.1",
+    "helmet": "^2.1.0",
     "mockjs": "^1.0.1-beta2",
     "mongodb": "^2.1.18",
     "mongoose": "^4.4.12",

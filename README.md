@@ -1,4 +1,4 @@
-# my-project
+# vue-shop
 
 # 首页文章列表和商品列表交替出现
 
@@ -39,7 +39,24 @@ vux自带组件中props使用驼峰命名,我们传入的属性应该使用中�
 $ curl -X POST -H 'Content-Type: application/json' -d '{"username":"admin@admin.com","password":"123456"}' http://127.0.0.1:3000/api/user/login
 ```
 
-> A Vue.js project
+# 使用openssl生成证书提供https
+
+```bash
+# 生成服务器端的非对称秘钥
+$ openssl genrsa -des3 -out server.key 1024
+
+# 生成签名请求的CSR文件
+$ openssl req -new -key server.key -out server.csr
+
+# 自己对证书进行签名，签名的有效期是365天
+$ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+
+# 去除证书文件的password
+$ cp server.key server.key.orig
+$ openssl rsa -in server.key.orig -out server.key
+```
+
+最终在建立HTTPS链接中使用的文件是:server.crt and server.key
 
 ## Build Setup
 

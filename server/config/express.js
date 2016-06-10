@@ -9,6 +9,9 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
+const cors = require('cors')
+const compression = require('compression')
+const helmet = require('helmet')
 const RedisStore = require('connect-redis')(session)
 const logger = require('morgan')
 
@@ -61,14 +64,21 @@ module.exports = function(){
   // the code above does not work,the chrome will never send next really request,
   // the chrome throw a error 'provision header shown'
   // ref: https://cnodejs.org/topic/51dccb43d44cbfa3042752c8
-  app.all('*', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*")
-    res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With")
-    res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS")
-    res.header("X-Powered-By",' 3.2.1')
-    if(req.method === "OPTIONS") res.sendStatus(200);/*让options请求快速返回*/
-    else next()
-  })
+  //app.all('*', function(req, res, next) {
+  //  res.header("Access-Control-Allow-Origin", "*")
+  //  res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With")
+  //  res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS")
+  //  res.header("X-Powered-By",' 3.2.1')
+  //  if(req.method === "OPTIONS") res.sendStatus(200);/*让options请求快速返回*/
+  //  else next()
+  //})
+
+  // the code above can use a middleware below,ref:https://github.com/expressjs/cors
+  app.use(cors())
+  // compress all requests,ref:https://github.com/expressjs/compression
+  app.use(compression())
+  // Help secure Express apps with various HTTP headers,ref:https://github.com/helmetjs/helmet
+  app.use(helmet())
 
   // load route
   require('../app/routes/user')(app)

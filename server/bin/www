@@ -2,9 +2,14 @@
 
 'use strict'
 
+const http = require('http')
+const https = require('https')
+
 const app = require('../app')
 const config = require('../config/config')
 
-app.listen(config.port,() => {
-  console.info(`app started at the port ${config.port}`)
-})
+let httpServer = http.createServer(app)
+let httpsServer = https.createServer(config.certificate, app)
+
+exports.httpServer = httpServer
+exports.httpsServer = httpsServer

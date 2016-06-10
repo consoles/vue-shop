@@ -5,7 +5,7 @@ chmod +r dist/static/images/*.jpg
 chmod +r dist/static/images/*.png
 
 # setup api server
-pm2 start server/bin/www
+pm2 start server/bin/cluster
 
 # timeout
 # sleep 5
