@@ -9,9 +9,9 @@
 </template>
 
 <script>
-  import Rater from 'vux/components/rater'
-  import Group from 'vux/components/group'
-  import Cell from 'vux/components/cell'
+  import Rater from 'vux/src/components/rater'
+  import Group from 'vux/src/components/group'
+  import Cell from 'vux/src/components/cell'
 
   export default {
     components: {

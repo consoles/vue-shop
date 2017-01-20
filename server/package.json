@@ -25,12 +25,15 @@
     "express": "^4.13.4",
     "express-session": "^1.12.1",
     "helmet": "^2.1.0",
+    "lodash": "^4.17.4",
     "mockjs": "^1.0.1-beta2",
     "mongodb": "^2.1.18",
     "mongoose": "^4.4.12",
+    "morgan": "^1.7.0",
     "node-uuid": "^1.4.7",
     "nodemailer": "^0.7.1",
     "qrcode": "^0.4.2",
-    "redis": "^2.6.0-1"
+    "redis": "^2.6.0-1",
+    "request": "^2.79.0"
   }
 }

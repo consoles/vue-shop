@@ -46,8 +46,8 @@
 <script>
   import Comment from './Comment'
   import Rate from './Rate'
-  import Group from 'vux/components/group'
-  import Cell from 'vux/components/cell'
+  import Group from 'vux/src/components/group'
+  import Cell from 'vux/src/components/cell'
 
   export default{
     data () {

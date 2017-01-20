@@ -12,10 +12,10 @@
 </template>
 
 <script>
-  import Group from 'vux/components/group'
-  import Address from 'vux/components/address'
+  import Group from 'vux/src/components/group'
+  import Address from 'vux/src/components/address'
   import AddressChinaData from './city.json'
-  import XButton from 'vux/components/x-button'
+  import XButton from 'vux/src/components/x-button'
 
   export default {
     components: {

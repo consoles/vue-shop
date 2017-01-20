@@ -122,8 +122,7 @@
 </template>
 
 <script>
-  import Tab from 'vux/components/tab'
-  import TabItem from 'vux/components/tab-item'
+  import { Tab, TabItem } from 'vux/src/components/tab'
   import Panel from './../patch/Panel'
 
   export default {

@@ -37,10 +37,9 @@
 </template>
 
 <script>
-  import Search from 'vux/components/search'
-  import Flexbox from 'vux/components/flexbox'
-  import FlexboxItem from 'vux/components/flexbox-item'
-  import Divider from 'vux/components/divider'
+  import Search from 'vux/src/components/search'
+  import { Flexbox, FlexboxItem } from 'vux/src/components/flexbox'
+  import Divider from 'vux/src/components/divider'
 
   export default {
     components: {

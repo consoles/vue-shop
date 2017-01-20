@@ -60,24 +60,20 @@ $ openssl rsa -in server.key.orig -out server.key
 
 ## Build Setup
 
+### mongo shell
+
+```bash
+$ use shop;
+$ db.dropDatabase();
+```
+
 ``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+$ git clone https://github.com/consoles/vue-shop.git /tmp && cd /tmp && npm i -d
+$ cd server && npm i -d
+$ cd .. && cp nginx.conf /usr/local/etc/nginx/nginx.conf && nginx -s reload
+$ redis-server
+$ mkdir -p dist/upload && node server/util/crawl.js
+$ open https://127.0.0.1
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

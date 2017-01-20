@@ -11,7 +11,7 @@
     }
 </style>
 <script>
-  import Countdown from 'vux/components/countdown'
+  import Countdown from 'vux/src/components/countdown'
 
   export default {
     components: {

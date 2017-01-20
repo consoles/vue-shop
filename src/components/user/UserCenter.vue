@@ -67,7 +67,7 @@
 </template>
 
 <script>
-  import Blur from 'vux/components/blur'
+  import Blur from 'vux/src/components/blur'
 
   export default {
     components: {

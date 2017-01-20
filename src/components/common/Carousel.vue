@@ -5,8 +5,8 @@
 </template>
 
 <script>
-  import Swiper from 'vux/components/swiper'
-  import SwiperItem from 'vux/components/swiper-item'
+  import Swiper from 'vux/src/components/swiper'
+  import SwiperItem from 'vux/src/components/swiper-item'
 
   const demoList =
     [{

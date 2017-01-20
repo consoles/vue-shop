@@ -14,8 +14,8 @@
 
 <script>
   import Cartpanel from './Cartpanel'
-  import Group from 'vux/components/group'
-  import XButton from 'vux/components/x-button'
+  import Group from 'vux/src/components/group'
+  import XButton from 'vux/src/components/x-button'
 
   export default {
     components: {

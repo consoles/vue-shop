@@ -29,10 +29,10 @@
   </div>
 </template>
 <script>
-  import Blur from 'vux/components/blur'
-  import XInput from 'vux/components/x-input'
-  import Group from 'vux/components/group'
-  import XButton from 'vux/components/x-button'
+  import Blur from 'vux/src/components/blur'
+  import XInput from 'vux/src/components/x-input'
+  import Group from 'vux/src/components/group'
+  import XButton from 'vux/src/components/x-button'
 
   export default {
     components: {

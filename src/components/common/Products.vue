@@ -33,8 +33,8 @@
 
 <script>
   import Panel from './../patch/Panel'
-  import Loading from 'vux/components/loading'
-  import Scroller from 'vux/components/scroller'
+  import Loading from 'vux/src/components/loading'
+  import Scroller from 'vux/src/components/scroller'
 
   export default {
     components: {

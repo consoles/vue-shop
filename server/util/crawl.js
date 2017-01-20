@@ -1,11 +1,14 @@
 'use strict'
 
 const fs = require('fs')
+const path = require('path')
 
 const request = require('request')
 const _ = require('lodash')
 const Random = require('mockjs').Random
 const uuid = require('node-uuid')
+
+const PROJECT_PATH = path.join(__dirname, '../../')
 
 var insertProducts = require('./db').insertProducts
 
@@ -29,7 +32,7 @@ let genUUIDFilename = () => uuid.v4().replace(/-/g, '') + '.jpg'
 
 function requestCallback(error, response, body) {
   if (!error && (response.statusCode == 200 || response.statusCode == 304)) {
-    let data = JSON.parse(body);
+    let data = JSON.parse(body).data;
     let items = []
     // get original data,it cached in array items
     _.each(data,function (item) {
@@ -52,7 +55,7 @@ function requestCallback(error, response, body) {
       let filename = genUUIDFilename()
       let imageUrl = item.image
       console.log('开始下载图片:' + imageUrl)
-      request(item.image).pipe(fs.createWriteStream(`../../public/dist/upload/${filename}`))
+      request(item.image).pipe(fs.createWriteStream(path.join(PROJECT_PATH ,`dist/upload/${filename}`)))
       item.image = '/upload/' + filename
     })
     console.log(`一共抓取${data.length}个数据`)
