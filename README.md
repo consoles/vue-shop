@@ -67,12 +67,16 @@ $ use shop;
 $ db.dropDatabase();
 ```
 
+### Usage
+
 ``` bash
-$ git clone https://github.com/consoles/vue-shop.git /tmp && cd /tmp && npm i -d
+$ git clone https://github.com/consoles/vue-shop.git /tmp/vue-shop && cd /tmp/vue-shop && npm i -d
 $ cd server && npm i -d
-$ cd .. && cp nginx.conf /usr/local/etc/nginx/nginx.conf && nginx -s reload
+$ cd .. && sudo cp nginx.conf /usr/local/etc/nginx/nginx.conf && nginx -s reload
 $ redis-server
 $ mkdir -p dist/upload && node server/util/crawl.js
+$ npm run build
+$ node server/bin/cluster.js
 $ open https://127.0.0.1
 ```
 
