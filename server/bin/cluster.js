@@ -15,15 +15,20 @@ const numCpus = os.cpus().length
 let workers = {}
 if(cluster.isMaster){
   // 主进程分支
-  cluster.on('death',function(worker){
+  cluster.on('exit',function(worker){
     // 当一个工作进程结束时，重启工作进程
-    delete workers[worker.pid]
+    delete workers[worker.process.pid]
     worker = cluster.fork()
-    workers[worker.pid] = worker
+    workers[worker.process.pid] = worker
   });
   // 初始时开启与CPU内核数量相同的工作进程
   for(let i = 0;i < numCpus;i++){
     let worker = cluster.fork()
+    worker.on('exit',function(code,signal){
+      delete workers[worker.pid]
+      worker = cluster.fork()
+      workers[worker.pid] = worker
+    })
     workers[worker.pid] = worker
   }
 } else {
