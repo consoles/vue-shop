@@ -70,6 +70,7 @@ module.exports = {
     let pagesize = parseInt(req.query.pagesize, 10) || 10
     let pagestart = parseInt(req.query.pagestart, 10) || 1
     let api = `http://app.xiaotaojiang.com/api-v2/articles?start=${pagestart}&limit=${pagesize}`
+    // 原先是请求此API并将结果返回，但是此API失效，请自行构造下面的数据，可以使用mockjs
     request.get(api,{json:true},function(err,obj,response){
       let articles = []
       _.each(response,function(data){

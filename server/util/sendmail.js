@@ -11,7 +11,7 @@ let smtpTransport = nodemailer.createTransport("SMTP",{
   port: 465, // SMTP 端口
   auth: {
     user: "1362955042@qq.com",
-    pass: "Pi=3.141592654?"
+    pass: "yourpassword"
   }
 })
 

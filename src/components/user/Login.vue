@@ -18,8 +18,8 @@
       </group>
       <group title="验证码" class="weui_cells_form">
         <x-input title="验证码" class="weui_vcode">
+          <img slot="right" :src="vcodesrc" @click="changePic">
         </x-input>
-        <img slot="right" :src="vcodesrc" @click="changePic">
       </group>
       <group>
         <x-button type="primary" class="login-btn" @click="login">登陆</x-button>

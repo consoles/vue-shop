@@ -51,6 +51,7 @@ function requestCallback(error, response, body) {
     // change products image,request the image url then pipe it to local
     // in this step we can store it to mongodb
     console.time('download resource')
+    let item = items[0]
     _.each(items,function(item){
       let filename = genUUIDFilename()
       let imageUrl = item.image
@@ -63,8 +64,8 @@ function requestCallback(error, response, body) {
     insertProducts(items,function(err,result){
       if(err) throw Error(err)
       console.log('成功插入' + result.result.n + '条记录')
+      console.timeEnd('download resource')
     })
-    console.timeEnd('download resource')
   } else {
     throw Error('please check your network and firewall')
   }
